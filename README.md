@@ -9,3 +9,16 @@ A repo storing coursewk of UCL comp0264 year 2526 group 11
 [https://huggingface.co/chubao/gemma2-2b-yoda-a4](https://huggingface.co/chubao/gemma2-2b-yoda-a4)
 
 3. dataset in A3 is in `./datasets/dolly_qa_yoda_0227075933_205525`
+
+4. you could load the model from huggingface by:
+```python
+from peft import PeftModel
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained("chubao/gemma2-2b-yoda-a4")
+# Step 1: load base model
+base = AutoModelForCausalLM.from_pretrained(MODEL_ID, **model_kwargs)
+
+# Step 2: overlay the adapter from hub
+model_a4 = PeftModel.from_pretrained(base, "chubao/gemma2-2b-yoda-a4").eval()
+```
