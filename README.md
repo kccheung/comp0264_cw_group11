@@ -22,7 +22,7 @@ base = AutoModelForCausalLM.from_pretrained(MODEL_ID, **model_kwargs)
 model_a4 = PeftModel.from_pretrained(base, "chubao/gemma2-2b-yoda-a4").eval()
 
 #Step 3: overlay the adapter for model_b3 from hub
-model_a4.add_adapter("JY031/gemma2-2b-yoda-rlvr", adapter_name="rlvr")
+model_a4.load_adapter("JY031/gemma2-2b-yoda-rlvr", adapter_name="rlvr")
 model_b3 = model_a4
 
 ```
