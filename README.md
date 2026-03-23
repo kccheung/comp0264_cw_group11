@@ -26,3 +26,30 @@ model_a4.load_adapter("JY031/gemma2-2b-yoda-rlvr", adapter_name="rlvr")
 model_b3 = model_a4
 
 ```
+
+## Local Model Weights (Google Drive)
+
+Due to GitHub file size limits, specific trained adapter weights are hosted on Google Drive. To run the evaluation notebooks locally, download the contents of the following folders and place them directly into the `models/` directory.
+
+### 1. RLVR Balanced Model
+* **Download Link:** [Google Drive Link 1](https://drive.google.com/drive/folders/1pmsCHzJ4DuGj2L-uVgDtMLeLHrRSqRls?usp=sharing)
+* **Target Folder:** `models/gemma2-2b-yoda-8bit-full-rlvr-balanced/`
+
+### 2. RLVR Balanced Model (Fixed)
+* **Download Link:** [Google Drive Link 2](https://drive.google.com/drive/folders/1yISuwa1Qo-g_mt7kIXjGCPkHB3byrORj?usp=sharing)
+* **Target Folder:** `models/gemma2-2b-yoda-8bit-full-rlvr-balanced-FIXED/`
+
+### Expected Directory Structure
+Ensure your local structure matches this before running the notebooks:
+```text
+COMP0264_CW_GROUP11/
+├── models/
+│   ├── gemma2-2b-yoda-8bit-full-rlvr-balanced/
+│   ├── gemma2-2b-yoda-8bit-full-rlvr-balanced-FIXED/
+│   ├── gemma2-2b-yoda-q4-rlvr/
+│   └── .gitkeep
+├── datasets/
+├── plots/
+├── yoda_style_classifier/
+...
+```
